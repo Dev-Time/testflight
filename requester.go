@@ -57,7 +57,7 @@ func (requester *Requester) performRequest(httpAction, route, contentType, body 
 }
 
 func (requester *Requester) sendRequest(request *http.Request) *Response {
-	if Cleint == nil {
+	if Client == nil {
 		Client := http.Client{}
 	}
 	
