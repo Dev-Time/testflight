@@ -9,6 +9,7 @@ import (
 
 type Requester struct {
 	server *httptest.Server
+	Client http.Client
 }
 
 func (requester *Requester) Get(route string) *Response {
@@ -56,7 +57,10 @@ func (requester *Requester) performRequest(httpAction, route, contentType, body 
 }
 
 func (requester *Requester) sendRequest(request *http.Request) *Response {
-	client := http.Client{}
+	if Cleint == nil {
+		Client := http.Client{}
+	}
+	
 	response, err := client.Do(request)
 	if err != nil {
 		panic(err)
